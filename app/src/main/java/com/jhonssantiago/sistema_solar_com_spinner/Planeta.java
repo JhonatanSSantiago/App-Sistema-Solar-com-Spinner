@@ -35,5 +35,12 @@ public class Planeta {
         this.descricao = descricao;
     }
 
-
+    @Override
+    public String toString() {
+        return "Planeta{" +
+                "imagem=" + imagem +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                '}';
+    }
 }
