@@ -4,64 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:layout_margin="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sistema Solar"
-        android:padding="2dp"
-        android:gravity="center"
         android:layout_margin="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Sistema Solar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner_planetas"
-        android:padding="2dp"
-        android:layout_margin="10dp"/>
-
-    <ProgressBar
-        android:layout_margin="10dp"
+        android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:id="@+id/progressbar"
-        android:progress="0"
-        android:indeterminate="false"
-        android:max="100"
-        android:visibility="invisible"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+        android:layout_height="30dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"
         android:id="@+id/imagem_planeta"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
         android:padding="2dp"
-        android:layout_margin="10dp"/>
+        android:src="@drawable/ic_launcher_background" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/nome_planeta"
-        android:gravity="center"
-        android:text="Nome"
-        android:padding="2dp"
-        android:layout_margin="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/descricao_planeta"
-        android:text="Descrição"
-        android:padding="2dp"
         android:layout_margin="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Nome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/descricao_planeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="2dp"
+        android:text="Descrição"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 </LinearLayout>

@@ -2,22 +2,61 @@ package com.jhonssantiago.sistema_solar_com_spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
+    private Spinner spinner_planetas;
+    private TextView nome_planeta, descricao_planeta;
+    private ImageView image_planeta;
+    private ArrayAdapter adapter;
+    private Planeta planeta;
     private ArrayList<String> lista_dados;
     private ArrayList<Planeta> planetas_l;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        setContentView(R.layout.activity_main);
         preencherLista();
         criarLista();
+
+        image_planeta = findViewById(R.id.imagem_planeta);
+        nome_planeta = findViewById(R.id.nome_planeta);
+        descricao_planeta = findViewById(R.id.descricao_planeta);
+        spinner_planetas = findViewById(R.id.spinner);
+        adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, lista_dados);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_planetas.setAdapter(adapter);
+
+        spinner_planetas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = spinner_planetas.getSelectedItemPosition();
+                planeta = planetas_l.get(pos);
+                image_planeta.setImageDrawable(getDrawable(planeta.getImagem()));
+                nome_planeta.setText(planeta.getNome());
+                descricao_planeta.setText(planeta.getDescricao());
+                image_planeta.setVisibility(View.VISIBLE);
+                nome_planeta.setVisibility(View.VISIBLE);
+                descricao_planeta.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     private void preencherLista(){
@@ -43,4 +82,5 @@ public class MainActivity extends AppCompatActivity {
         planetas_l.add(b7);
         planetas_l.add(b8);
     }
+
 }
