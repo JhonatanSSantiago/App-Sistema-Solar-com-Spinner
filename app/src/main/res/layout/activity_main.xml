@@ -16,13 +16,14 @@
         android:gravity="center"
         android:padding="2dp"
         android:text="Sistema Solar"
+        android:textStyle="bold"
+        android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        android:layout_height="wrap_content"/>
 
 
     <ImageView
@@ -41,6 +42,8 @@
         android:gravity="center"
         android:padding="2dp"
         android:text="Nome"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
@@ -49,8 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="2dp"
-        android:text="Descrição"
-        android:textAlignment="inherit"
+        android:justificationMode="inter_word"
+        android:text="Descrição Deção Descrão Descrição voc Descrição alo te Descrição Descrição Descrição Descrição "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 </LinearLayout>
